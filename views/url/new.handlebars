@@ -1,0 +1,16 @@
+<form action="{{ url_create_path }}" method="post">
+  <fieldset>
+    <legend>Lyhennä linkki</legend>
+    <label>
+      Lyhennettävä verkko-osoite
+      <input name="url" type="url" autocomplete="url">
+    </label>
+    <label>
+      Salasana linkin poistoa varten
+      <password-field>
+        <input name="password" type="password" autocomplete="new-password">
+      </password-field>
+    </label>
+    <input type="submit" value="Lyhennä">
+  </fieldset>
+</form>

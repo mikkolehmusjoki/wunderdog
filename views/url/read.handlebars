@@ -1,0 +1,34 @@
+<h2><copy-able><i>{{ shortUrl }}</i></copy-able></h2>
+<p>Linkkiä on käytetty {{visitsCount}} kertaa.</p>
+<form action="{{ url_destroy_path }}" method="post">
+  <fieldset>
+    <legend>Poista linkki</legend>
+    <label>
+      Antamasi salasana poistoa varten
+      <password-field>
+        <input name="password" type="password">
+      </password-field>
+    </label>
+    <input type="submit" value="Poista">    
+  </fieldset>
+  {{#if visits}}
+    <table>
+      <caption>Pikalinkin käyttö päivämäärittäin</caption>
+      <thead>
+        <tr>
+          <th>Päivämäärä</th>
+          <th>Käyntejä</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each visits}}
+          <tr>
+            {{#each this}}
+              <td>{{this}}</td>
+            {{/each}}
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  {{/if}}
+</form>
